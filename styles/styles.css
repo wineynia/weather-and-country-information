@@ -95,7 +95,7 @@ button:hover {
     max-width: 600px;
   }
 
-  input[type="text"],
+  .search-input,
   button {
     width: auto;
     margin-right: 5px;
@@ -112,7 +112,7 @@ button:hover {
     justify-content: space-between;
   }
 
-  input[type="text"],
+  .search-input,
   button {
     width: calc(50% - 5px);
   }
