@@ -1,9 +1,9 @@
 :root {
-  --text-color: #16425B;
-  --background-color: #81C3D7;
-  --search-input-color: #D9DCD6;
-  --button-color: #3A7CA5;
-  --button-hover-color: #2F6690;
+  --text-color: #16425b;
+  --background-color: #81c3d7;
+  --search-input-color: #d9dcd6;
+  --button-color: #3a7ca5;
+  --button-hover-color: #2f6690;
 }
 
 * {
@@ -23,18 +23,38 @@ h1 {
   text-align: center;
 }
 
-div {
-  margin: 15px 0;
+.header {
+  color: #16425b;
+  padding: 20px;
+  text-align: center;
 }
 
-input[type="text"] {
+.main {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.search {
+  position: relative;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.search-input {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid var(--search-input-color);
   background-color: var(--search-input-color);
   color: var(--text-color);
-  box-sizing: border-box;
 }
 
 button {
