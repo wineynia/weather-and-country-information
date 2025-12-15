@@ -80,6 +80,11 @@ button:hover {
   display: none;
 }
 
+.footer {
+  padding: 20px;
+  text-align: center;
+}
+
 @media (min-width: 600px) {
   h1 {
     font-size: 2rem;
