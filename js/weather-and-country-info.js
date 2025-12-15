@@ -31,6 +31,7 @@ const fetchCountryInfo = async (country) => {
 const displayCountryInfo = (data) => {
   const country = data[0];
   countryInfoDiv.innerHTML = `
+        <img src="${country.flags.svg}" alt="Flag of ${country.name.common}" style="width: 100px; height: auto;">
         <h2>${country.name.common}</h2>
         <p>Population: ${country.population}</p>
         <p>Region: ${country.region}</p>
