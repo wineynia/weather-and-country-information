@@ -3,22 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const countryInput = document.getElementById("country-input");
   const countryInfoDiv = document.getElementById("country-info");
 
-  fetchButton.addEventListener("click", async () => {
+  fetchButton.addEventListener("click", () => {
     const countryName = countryInput.value.trim();
     if (!countryName) {
       alert("Please enter a country name.");
       return;
     }
-
-    try {
-      const countryData = await fetchCountryInfo(countryName);
-      displayCountryInfo(countryData);
-      countryInfoDiv.style.display = "block";
-      saveToLocalStorage(countryName);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-      alert("Failed to fetch data. Please try again.");
-    }
+    fetchCountryInfo(countryName).then(displayCountryInfo).catch(handleError);
   });
 
   const fetchCountryInfo = async (country) => {
@@ -32,12 +23,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const displayCountryInfo = (data) => {
     const country = data[0];
     countryInfoDiv.innerHTML = `
-        <h2>${country.name.common}</h2>
-        <img src="${country.flags.svg}" alt="Flag of ${country.name.common}" width="150"/>
-        <p>Population: ${country.population}</p>
-        <p>Region: ${country.region}</p>
-        <p>Capital: ${country.capital[0]}</p>
-    `;
+          <h2>${country.name.common}</h2>
+          <img src="${country.flags.svg}" alt="Flag of ${country.name.common}" width="150"/>
+          <p>Population: ${country.population}</p>
+          <p>Region: ${country.region}</p>
+          <p>Capital: ${country.capital[0]}</p>
+      `;
+    countryInfoDiv.style.display = "block";
+    saveToLocalStorage(country.name.common);
+  };
+
+  const handleError = (error) => {
+    console.error("Error fetching data:", error);
+    alert(error.message);
   };
 
   const saveToLocalStorage = (country) => {
