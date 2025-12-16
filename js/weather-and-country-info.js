@@ -1,6 +1,5 @@
 const API_KEY = "e8c160c59d8b576b64bd6d383f4a7642";
 const API_URL = "https://api.openweathermap.org/data/2.5/weather";
-
 let button = document.getElementById("fetch-button");
 let weather_container = document.getElementById("weather-info");
 
@@ -47,9 +46,7 @@ const displayWeather = (weather) => {
   const description = weather.weather[0].description;
   const iconCode = weather.weather[0].icon;
 
-  let weather_detail = document.createElement("div");
-  weather_detail.classList.add("weather-card");
-  weather_detail.innerHTML = `
+  weather_container.innerHTML = `
     <h2>${cityName}, ${country}</h2>
     <img src="https://openweathermap.org/img/wn/${iconCode}@2x.png" alt="${description}">
     <p class="temperature">Temperature: ${temperature}°C</p>
@@ -58,7 +55,7 @@ const displayWeather = (weather) => {
     <p>Weather: ${description}</p>
     <p>Humidity: ${humidity}%</p>
   `;
-  weather_container.appendChild(weather_detail);
+
 };
 
 button.addEventListener("click", fetchData);
