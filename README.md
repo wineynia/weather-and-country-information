@@ -62,4 +62,4 @@ Thanks to OpenWeatherMap and REST Countries API for providing extensive API reso
 Code
 
 ### Deployment
-The finalized project is deployed here: (live url link)
+The finalized project is deployed here: (https://wineynia.github.io/weather-and-country-information/)
