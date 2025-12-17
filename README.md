@@ -31,7 +31,7 @@ This project is a responsive webpage that retrieves weather data from the [OpenW
 
 1. Clone the repository:
 
-   git clone https://github.com/yourusername/weather-country-fetcher.git
+   git clone https: (https://github.com/wineynia/weather-and-country-information.git)
 
 2. Navigate to the project directory:
 
