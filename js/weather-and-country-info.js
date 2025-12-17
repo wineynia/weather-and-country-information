@@ -59,6 +59,7 @@ const displayWeather = (weather) => {
 };
 
 button.addEventListener("click", fetchData);
+
 document.addEventListener("DOMContentLoaded", () => {
   const fetchButton = document.getElementById("fetch-button");
   const countryInput = document.getElementById("country-input");
